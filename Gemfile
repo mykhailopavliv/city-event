@@ -26,4 +26,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem "figaro"
+gem 'figaro'
+gem 'haml'
+gem 'bootstrap'
+gem 'simple_form'

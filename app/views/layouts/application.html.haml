@@ -1,0 +1,18 @@
+%html{ :lang => 'en' }
+  %head
+    %title CityEvent
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-light.bg-light
+      %a.navbar-brand{:href => "#"} City-Event
+      %ul.navbar-nav
+        %li.nav-item
+          %a.nav-link{:href => "#"} Log in
+
+        
+
+    .container
+      = yield
