@@ -10,9 +10,19 @@
       %a.navbar-brand{:href => "#"} City-Event
       %ul.navbar-nav
         %li.nav-item
-          %a.nav-link{:href => "#"} Log in
+          %div.nav-link
+            - if user_signed_in?
+              = link_to "Log out", destroy_user_session_path, method: :delete
+            - else 
+              = link_to "Log in", user_session_path
+            
 
-        
+    - if notice
+      %p.alert.alert-success
+        = notice
+    - if alert
+      %p.alert.alert-danger
+        = alert
 
     .container
       = yield
