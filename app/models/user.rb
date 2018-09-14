@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+ 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   attr_accessor :login
@@ -9,4 +8,6 @@ class User < ApplicationRecord
     login = conditions.delete(:login)
     where(conditions).where(["lower(username) = :value OR lower(email) = :value", {value: login.strip.downcase}]).first
   end
+
+  has_many :events
 end
