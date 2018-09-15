@@ -1,0 +1,19 @@
+%h1 
+  = @event.title
+%p 
+  = @event.description
+%p
+  - if @event.image.attached?
+    = image_tag @event.image, alt: 'unicorn', height: 'auto', width: '300'
+%p 
+  = @event.email
+%p 
+  = @event.address
+%p 
+  = @event.start_date
+%p 
+  = @event.end_date
+%p 
+  = @event.price
+%p
+  = @event.user.username

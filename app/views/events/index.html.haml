@@ -1,0 +1,10 @@
+- @events.each do |event|
+  %h1
+    = link_to event.title, event_path(event)
+  %p
+    - if event.image.attached?
+      = link_to image_tag(event.image, alt: 'unicorn', height: 'auto', width: '200'), event_path(event)
+  %h3
+    = event.user.username
+  %h4
+    = event.price

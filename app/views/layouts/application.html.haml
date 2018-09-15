@@ -7,7 +7,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %nav.navbar.navbar-light.bg-light
-      %a.navbar-brand{:href => "#"} City-Event
+      = link_to "City-Event", events_path, class: "%a.navbar-brand" 
       %ul.navbar-nav
         %li.nav-item
           %div.nav-link
